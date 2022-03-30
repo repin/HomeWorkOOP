@@ -6,20 +6,20 @@ namespace HomeWorkOOP.Lesson1
 {
     public class Account
     {
-        public static int countAccount;
         private  int _nAccount;
         private decimal _balance;
         private typeAccount _typeAcc;
 
-        public Account()
-        {
-                _nAccount = ++countAccount;
-        }
+
         public int NAccount 
         {
             get
             {
                 return _nAccount;
+            }
+            set
+            {
+                _nAccount = value;
             }
         }
         public decimal Balance

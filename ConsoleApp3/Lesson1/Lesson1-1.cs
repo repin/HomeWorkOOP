@@ -13,11 +13,11 @@ namespace HomeWorkOOP.Lesson1
 
         public void Demo()
         {
-            Account account = new Account() {Balance = 124129312.14M, TypeAcc = typeAccount.Credit };
+            Account account = new Account() { NAccount = 1, Balance = 124129312.14M, TypeAcc = typeAccount.Credit };
             PrintData(account);
-            Account account2 = new Account() { Balance = 4283729312.14M, TypeAcc = typeAccount.Deposit };
+            Account account2 = new Account() { NAccount = 2, Balance = 4283729312.14M, TypeAcc = typeAccount.Deposit };
             PrintData(account2);
-            Account account3 = new Account() { Balance = 4312.14M, TypeAcc = typeAccount.Credit };
+            Account account3 = new Account() { NAccount = 3, Balance = 4312.14M, TypeAcc = typeAccount.Credit };
             PrintData(account3);
 
         }
