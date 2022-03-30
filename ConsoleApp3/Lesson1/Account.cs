@@ -7,15 +7,11 @@ namespace HomeWorkOOP.Lesson1
     public class Account
     {
         public static int countAccount;
-        private  int _nAccount;
+        private int _nAccount;
         private decimal _balance;
-        private typeAccount _typeAcc;
+        private TypeAccount _typeAcc;
 
-        public Account()
-        {
-                _nAccount = ++countAccount;
-        }
-        public int NAccount 
+        public int NAccount
         {
             get
             {
@@ -28,27 +24,37 @@ namespace HomeWorkOOP.Lesson1
             {
                 return _balance;
             }
-            set
-            {
-                _balance = value;
-            }
         }
-
-        public typeAccount TypeAcc
+        public TypeAccount TypeAcc
         {
             get
             {
                 return _typeAcc;
             }
-            set
-            {
-                _typeAcc = value;
-            }
         }
+
+        public Account(decimal balance) : this(balance, 0)
+        {
+        }
+
+        public Account(TypeAccount type) : this(0, type)
+        {
+
+        }
+
+        public Account(decimal balance, TypeAccount type)
+        {
+            _nAccount = ++countAccount;
+            _balance = balance;
+            _typeAcc = type;
+        }
+
+
     }
 
-    public enum typeAccount
+    public enum TypeAccount
     {
+        None = 0,
         Deposit = 1,
         Credit = 2
     }
