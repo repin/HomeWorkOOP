@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HomeWorkOOP.Lesson1
 {
-    public class Account
+    public class Account : IAccount
     {
         public static int countAccount;
         private int _nAccount;
@@ -17,6 +17,10 @@ namespace HomeWorkOOP.Lesson1
             {
                 return _nAccount;
             }
+            private set
+            {
+                _nAccount = value;
+            }
         }
         public decimal Balance
         {
@@ -24,12 +28,20 @@ namespace HomeWorkOOP.Lesson1
             {
                 return _balance;
             }
+            private set
+            {
+                _balance = value;
+            }
         }
         public TypeAccount TypeAcc
         {
             get
             {
                 return _typeAcc;
+            }
+            private set
+            {
+                _typeAcc = value;
             }
         }
 
@@ -44,10 +56,16 @@ namespace HomeWorkOOP.Lesson1
 
         public Account(decimal balance, TypeAccount type)
         {
-            _nAccount = ++countAccount;
-            _balance = balance;
-            _typeAcc = type;
+            NAccount = ++countAccount;
+            Balance = balance;
+            TypeAcc = type;
         }
+
+        public void ChangeMoney(decimal money)
+        {
+            Balance = Balance + money;
+        }
+
 
 
     }
