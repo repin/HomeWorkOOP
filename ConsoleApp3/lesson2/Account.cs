@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace HomeWorkOOP.Lesson1
+namespace HomeWorkOOP.lesson2
 {
     public class Account : IAccount
     {
@@ -66,6 +66,11 @@ namespace HomeWorkOOP.Lesson1
             Balance = Balance + money;
         }
 
+        public void MoneyTransfer (Account account, decimal sum)
+        {
+            this.Balance = this.Balance + sum;
+            account.Balance = account.Balance - sum;
+        }
 
 
 
