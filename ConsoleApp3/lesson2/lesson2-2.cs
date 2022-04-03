@@ -14,11 +14,11 @@ namespace HomeWorkOOP.lesson2
         {
             string stroka = "Какой чудесный день!";
             Console.WriteLine($"Исходная строка: {stroka}");
-            stroka = ReverseString(stroka);
+            ReverseString(ref stroka);
             Console.WriteLine($"Перевернутая строка: {stroka}");
         }
-
-        private string ReverseString(string stroka)
+/*
+        private string ReverseString(ref string stroka)
         {
             StringBuilder str = new StringBuilder();
             for (int i = stroka.Length - 1; i >= 0; i--)
@@ -26,6 +26,15 @@ namespace HomeWorkOOP.lesson2
                 str.Append(stroka[i]);
             }
             return str.ToString();
+        }*/
+        private void ReverseString(ref string stroka)
+        {
+            StringBuilder str = new StringBuilder();
+            for (int i = stroka.Length - 1; i >= 0; i--)
+            {
+                str.Append(stroka[i]);
+            }
+            stroka = str.ToString();
         }
     }
 }
