@@ -14,7 +14,8 @@ namespace HomeWorkOOP
                 new lesson2.lesson2_2(),
                 new lesson4.lesson4_1(),
                 new lesson4.lesson4_2(),
-                new lesson5.Lesson5_1()
+                new lesson5.Lesson5_1(),
+                new lesson6.Lesson6_1()
             };
             Console.WriteLine("Спискок текущих заданий:");
             foreach (ILesson lesson in lessonList)

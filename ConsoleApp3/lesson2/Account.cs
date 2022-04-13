@@ -66,11 +66,44 @@ namespace HomeWorkOOP.lesson2
             Balance = Balance + money;
         }
 
-        public void MoneyTransfer (Account account, decimal sum)
+        public void MoneyTransfer(Account account, decimal sum)
         {
             this.Balance = this.Balance + sum;
             account.Balance = account.Balance - sum;
         }
+
+        public static bool operator ==(Account ac1, Account ac2)
+        {
+            bool boolBalance = ac1.Balance == ac2.Balance;
+            bool boolTypeAcc = ac1.TypeAcc == ac2.TypeAcc;
+            return boolBalance && boolTypeAcc;
+        }
+
+        public static bool operator !=(Account ac1, Account ac2)
+        {
+            bool boolBalance = ac1.Balance != ac2.Balance;
+            bool boolTypeAcc = ac1.TypeAcc != ac2.TypeAcc;
+            return boolBalance && boolTypeAcc;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this == (Account)obj;
+        }
+
+        public override string ToString()
+        {
+            string nAccount = NAccount.ToString();
+            string balance = Balance.ToString();
+            string typeAccount = TypeAcc.ToString();
+            return "Номер аккаунта: " + nAccount + Environment.NewLine + "Баланс: " + balance + Environment.NewLine + "Тип аккаунта: " + typeAccount;
+        }
+
+        public override int GetHashCode()
+        {
+            return NAccount;
+        }
+
 
 
 
